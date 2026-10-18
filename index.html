@@ -4,8 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#8B1220">
-<meta name="description" content="Marvellous — AI automation, software engineering, ecommerce and connected digital systems.">
-<title>Wheezard — Marvellous | Design. Build. Automate.</title>
+<meta name="description" content="Marvellous is an AI/ML engineer and automation specialist building n8n AI workflows, lead qualification systems, appointment scheduling automations, and software solutions. Available for freelance and remote projects.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Oladipupo Marvellous">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wheezard — Marvellous | AI/ML Engineer & Automation Specialist">
+<meta property="og:description" content="AI/ML engineering, workflow automation, and software engineering. Explore practical n8n projects and discuss a freelance project.">
+<meta property="og:url" content="https://wheezmarv.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://wheezmarv.github.io/">
+<title>Marvellous | AI/ML Engineer & Automation Specialist — Wheezard</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Oladipupo Marvellous","alternateName":"Wheezard","url":"https://wheezmarv.github.io/","jobTitle":"AI/ML Engineer and Automation Specialist","knowsAbout":["Artificial Intelligence","Machine Learning","n8n","Zapier","Workflow Automation","Software Engineering","JavaScript","Node.js","Python","Flutter","React Native","Tailwind CSS"],"sameAs":["https://github.com/wheezmarv"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +30,9 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:#26040a;color:var(--cream);font-family:"DM Sans",sans-serif}
 a{color:inherit;text-decoration:none}button{font:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
+img{max-width:100%;height:auto}
+@media(hover:none){.feature-card:hover,.info-card:hover,.project:hover{transform:none}}
 .frame{position:relative;isolation:isolate;min-height:100vh;overflow:hidden;border-radius:var(--radius-frame);border:1px solid rgba(255,246,236,.12);background:radial-gradient(ellipse at 52% 43%,var(--red-glow) 0%,rgba(173,24,42,.82) 27%,transparent 61%),radial-gradient(ellipse at 48% 20%,#A7192B 0%,var(--red) 46%,var(--red-deep) 100%);box-shadow:0 0 0 5px #26040a}
 .frame:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:8;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
 .frame:after{content:"";height:7px;background:var(--ink);position:absolute;bottom:0;left:0;right:0;z-index:9}
@@ -110,7 +124,7 @@ footer{position:relative;z-index:2;padding:20px 48px 27px;display:flex;justify-c
   <div class="eyebrow"><span class="check">✓</span> AI/ML ENGINEER &amp; AUTOMATION SPECIALIST</div>
   <h1 id="hero-title"><span>DESIGN.</span><span>BUILD.</span><span>AUTOMATE.</span></h1>
   <p class="intro"><strong>Hey, I'm Marvellous.</strong> I work across AI/ML engineering, automation, and software engineering—building intelligent applications, connected workflows, and practical digital solutions.</p>
-  <div class="actions"><a class="primary" href="#projects">EXPLORE MY WORK <span class="arrow-circle">↗</span></a><a class="watch" href="#story" aria-label="Watch my story"><span class="play">▶</span><span class="watch-label glass">MY STORY</span></a></div>
+  <div class="actions"><a class="primary" href="#contact">HIRE ME <span class="arrow-circle">↗</span></a><a class="watch" href="#projects" aria-label="View my work"><span class="play">▶</span><span class="watch-label glass">VIEW MY WORK</span></a></div>
  </div>
  <div class="center" aria-label="Portrait area">
   <div class="portrait-glow"></div>
@@ -154,10 +168,26 @@ footer{position:relative;z-index:2;padding:20px 48px 27px;display:flex;justify-c
   </div>
   <div class="section-heading reveal" id="projects" style="margin-top:56px"><span class="kicker">SELECTED PROJECTS</span><h2>Built to make work flow.</h2><p>Explore these public n8n workflow projects and the ideas behind them.</p></div>
   <div class="projects">
-   <article class="project glass reveal"><span class="tag">N8N · LEAD OPERATIONS</span><h3>AI Lead Qualification & Follow-up System</h3><p>A workflow project focused on organising incoming leads, supporting qualification, and streamlining follow-up actions.</p><a href="https://github.com/wheezmarv/AI-Lead-Qualification-Follow-up-System-n8n-" target="_blank" rel="noopener noreferrer">VIEW PROJECT ON GITHUB ↗</a></article>
-   <article class="project glass reveal"><span class="tag">N8N · SCHEDULING</span><h3>AI Appointment Scheduler</h3><p>An automation project exploring a smoother appointment scheduling process by connecting workflow steps and AI-assisted interactions.</p><a href="https://github.com/wheezmarv/AI-Appointment-Scheduler-n8n-" target="_blank" rel="noopener noreferrer">VIEW PROJECT ON GITHUB ↗</a></article>
+   <article class="project glass reveal">
+    <span class="tag">CASE STUDY 01 · N8N · AI LEAD OPERATIONS</span>
+    <h3>AI Lead Qualification & Follow-up System</h3>
+    <p><strong>Problem:</strong> Enquiries can arrive at different times and require manual review, sorting, and follow-up. Slow responses can mean missed opportunities.</p>
+    <p><strong>Solution approach:</strong> An n8n workflow designed to capture enquiries, use AI to extract key details such as service needs, budget, and urgency, support lead scoring, save structured lead data, and trigger tailored follow-up steps.</p>
+    <p><strong>Tools:</strong> n8n, OpenAI/AI processing, and connected CRM or database services depending on the configured workflow.</p>
+    <p><strong>Intended impact:</strong> Faster lead triage, more consistent follow-up, better-organised enquiry records, and less repetitive admin. These are target outcomes, not measured performance claims.</p>
+    <a href="https://github.com/wheezmarv/AI-Lead-Qualification-Follow-up-System-n8n-" target="_blank" rel="noopener noreferrer">EXPLORE SOURCE PROJECT ↗</a>
+   </article>
+   <article class="project glass reveal">
+    <span class="tag">CASE STUDY 02 · N8N · APPOINTMENT AUTOMATION</span>
+    <h3>AI Appointment Scheduler</h3>
+    <p><strong>Problem:</strong> Coordinating appointments through manual messages can create back-and-forth communication, delays, and missed scheduling details.</p>
+    <p><strong>Solution approach:</strong> An n8n automation project exploring how AI-assisted interactions and connected workflow steps can guide scheduling requests and help organise appointment information.</p>
+    <p><strong>Tools:</strong> n8n and AI-assisted workflow logic; calendar, messaging, or other integrations depend on the specific workflow configuration.</p>
+    <p><strong>Intended impact:</strong> A smoother booking journey, fewer manual coordination steps, and more consistent handling of scheduling requests. These are intended benefits, not verified metrics.</p>
+    <a href="https://github.com/wheezmarv/AI-Appointment-Scheduler-n8n-" target="_blank" rel="noopener noreferrer">EXPLORE SOURCE PROJECT ↗</a>
+   </article>
   </div>
-  <div class="contact-panel glass reveal" id="contact"><div><span class="kicker">LET'S CONNECT</span><h2>Let's make something happen.</h2><p>I'm open to freelance projects, collaborations, and remote opportunities in AI automation, ecommerce, and software development.</p></div><div class="contact-links"><a href="https://github.com/wheezmarv" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="https://github.com/wheezmarv?tab=repositories" target="_blank" rel="noopener noreferrer">MORE PROJECTS ↗</a></div></div>
+  <div class="contact-panel glass reveal" id="contact"><div><span class="kicker">LET'S CONNECT</span><h2>Let's make something happen.</h2><p>I'm open to freelance projects, collaborations, and remote opportunities in AI automation, ecommerce, and software development.</p></div><div class="contact-links"><a href="#projects">VIEW CASE STUDIES ↗</a><a href="https://github.com/wheezmarv" target="_blank" rel="noopener noreferrer">GITHUB PROFILE ↗</a></div></div>
  </div>
 </section>
 </main>
@@ -170,8 +200,11 @@ toggle.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open
 mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
 const cursor=document.getElementById('cursor');let mx=0,my=0,cx=0,cy=0;
-window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.opacity='1'});
-function cursorFrame(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;cursor.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(cursorFrame)}cursorFrame();
+if(matchMedia('(pointer:fine)').matches){
+ window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.opacity='1'});
+ function cursorFrame(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;cursor.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(cursorFrame)}
+ cursorFrame();
+}
 const portrait=document.getElementById('portrait');
 window.addEventListener('mousemove',e=>{if(matchMedia('(pointer:fine)').matches){const x=(e.clientX/innerWidth-.5)*-20,y=(e.clientY/innerHeight-.5)*-16;portrait.style.setProperty('--px',x+'px');portrait.style.setProperty('--py',y+'px')}});
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
