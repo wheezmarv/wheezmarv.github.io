@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Marvellous is an AI automation and software development freelancer building practical workflows, AI agents, and API integrations.">
+  <title>Marvellous | AI Automation & Software Development</title>
+  <style>
+    :root{--bg:#07111f;--bg2:#0b1830;--panel:rgba(17,35,61,.72);--line:rgba(151,183,220,.17);--text:#e8eff9;--muted:#aabbd1;--blue:#79b8ff;--cyan:#7be7e2;--shadow:0 24px 70px rgba(0,0,0,.25)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(42,102,168,.2),transparent 38%),radial-gradient(ellipse at 0% 40%,rgba(24,119,140,.12),transparent 32%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(151,183,220,.1);background:rgba(7,17,31,.78);backdrop-filter:blur(18px)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.2px}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--text)}
+    .menu{display:none;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 11px}
+    .hero{padding:94px 0 76px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:55px;min-height:590px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid rgba(123,231,226,.25);border-radius:999px;background:rgba(123,231,226,.07);color:#b7f5f0;font-size:.82rem;letter-spacing:.3px}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.04;letter-spacing:-.055em;margin:23px 0 20px;max-width:760px}h1 .accent{background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro{font-size:1.08rem;color:var(--muted);max-width:650px;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:12px 18px;font-weight:700;border:1px solid var(--line);transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-2px);border-color:rgba(123,231,226,.5)}.btn.primary{color:#07111f;background:linear-gradient(105deg,#91c6ff,#8ce9df);border:0}.btn.secondary{background:rgba(255,255,255,.035);color:var(--text)}
+    .hero-card{position:relative;border:1px solid rgba(151,183,220,.2);background:linear-gradient(145deg,rgba(22,47,78,.83),rgba(12,27,48,.76));box-shadow:var(--shadow);border-radius:26px;padding:26px;overflow:hidden;isolation:isolate}.hero-card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(77,169,218,.14);filter:blur(28px);right:-90px;top:-100px;z-index:-1}
+    .card-top{display:flex;align-items:center;gap:7px;padding-bottom:18px;border-bottom:1px solid var(--line)}.orb{width:9px;height:9px;border-radius:50%;background:#8be7df}.card-top small{margin-left:auto;color:var(--muted)}.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem;color:#c7d7e9;padding:20px 0 8px}.code p{margin:9px 0}.code .key{color:#8edbd5}.code .value{color:#a7caff}.code .comment{color:#8297b0}.statrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.stat{border:1px solid var(--line);background:rgba(4,14,27,.36);padding:14px;border-radius:14px}.stat strong{display:block;font-size:1.1rem}.stat span{font-size:.78rem;color:var(--muted)}
+    section{padding:64px 0}.section-head{max-width:680px;margin-bottom:28px}.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.75rem}.section-head h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;letter-spacing:-.035em;margin:10px 0}.section-head p{color:var(--muted);margin:0}
+    .glass{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,38,65,.75),rgba(10,25,44,.72));backdrop-filter:blur(16px);border-radius:20px;box-shadow:0 14px 40px rgba(0,0,0,.12)}
+    .about{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:32px}.about p{color:var(--muted);margin-top:0}.chips{display:flex;flex-wrap:wrap;gap:9px;align-content:start}.chip{padding:8px 11px;border-radius:10px;border:1px solid var(--line);background:rgba(6,17,31,.38);color:#d4e2f2;font-size:.87rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile{padding:22px;min-height:190px}.tile .icon{font-size:1.35rem;margin-bottom:14px}.tile h3{margin:0 0 8px;font-size:1.08rem}.tile p{margin:0;color:var(--muted);font-size:.92rem}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{padding:24px;display:flex;flex-direction:column;min-height:250px}.project .label{font-size:.75rem;color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.1em}.project h3{font-size:1.28rem;margin:10px 0}.project p{color:var(--muted);margin:0 0 18px}.project .project-link{margin-top:auto;color:#b7d8ff;font-weight:700;font-size:.92rem}.project-link:hover{color:var(--cyan)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:22px}.num{color:var(--cyan);font-weight:900;font-size:.8rem;letter-spacing:.1em}.step h3{margin:8px 0}.step p{margin:0;color:var(--muted);font-size:.92rem}
+    .contact{padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}.contact h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:7px 0}.contact p{color:var(--muted);margin:0;max-width:620px}.contact-actions{display:flex;flex-wrap:wrap;gap:10px;flex-shrink:0}
+    footer{padding:28px 0 38px;color:#8fa4bd;font-size:.85rem;border-top:1px solid rgba(151,183,220,.1);margin-top:60px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:65px;gap:30px;min-height:auto}.hero-card{max-width:550px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}}
+    @media(max-width:600px){.wrap{width:min(100% - 28px,1100px)}nav{min-height:64px}.menu{display:block}.navlinks{display:none;position:absolute;left:14px;right:14px;top:63px;padding:16px;background:#0c1a2d;border:1px solid var(--line);border-radius:14px;flex-direction:column;gap:14px}.navlinks.open{display:flex}.hero{padding:54px 0 40px}h1{font-size:clamp(2.6rem,13vw,4rem)}section{padding:48px 0}.grid,.projects{grid-template-columns:1fr}.tile{min-height:auto}.contact{padding:24px}.statrow{gap:8px}.stat{padding:11px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Main navigation">
+    <a class="brand" href="#home">Marvellous<span>.</span></a>
+    <button class="menu" id="menuButton" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="navlinks" id="navLinks">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> AI Automation · Software Development</div>
+      <h1>Building useful tech that <span class="accent">works smarter.</span></h1>
+      <p class="intro">I'm Marvellous, an aspiring AI engineer and automation developer. I build practical n8n workflows, AI-powered systems, and API integrations that help teams reduce repetitive work and move faster.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+        <a class="btn secondary" href="#contact">Let's connect</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Automation code illustration">
+      <div class="card-top"><span class="orb"></span><span class="orb"></span><span class="orb"></span><small>workflow.js</small></div>
+      <div class="code">
+        <p><span class="comment">// Turn repetitive tasks into systems</span></p>
+        <p><span class="key">const</span> workflow = {</p>
+        <p>&nbsp;&nbsp;trigger: <span class="value">"new lead"</span>,</p>
+        <p>&nbsp;&nbsp;qualify: <span class="value">"AI analysis"</span>,</p>
+        <p>&nbsp;&nbsp;actions: [</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"update CRM"</span>,</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"notify team"</span>,</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"follow up"</span></p>
+        <p>&nbsp;&nbsp;]</p><p>};</p>
+      </div>
+      <div class="statrow"><div class="stat"><strong>n8n + APIs</strong><span>Connected workflows</span></div><div class="stat"><strong>AI-first</strong><span>Practical solutions</span></div></div>
+    </aside>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">A little about me</span><h2>Curious about technology. Focused on solving problems.</h2></div>
+      <div class="glass about">
+        <div><p>My work sits at the intersection of AI automation and software development. I enjoy connecting tools, APIs, and AI capabilities into clear workflows that solve real business problems—from lead follow-up to appointment scheduling.</p><p>I'm continuously improving my skills through hands-on projects and technical learning. My approach is simple: understand the problem, build a useful solution, test it, and keep making it better.</p></div>
+        <div class="chips" aria-label="Technology stack"><span class="chip">n8n</span><span class="chip">AI Automation</span><span class="chip">AI Agents</span><span class="chip">API Integrations</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">Workflow Design</span><span class="chip">Problem Solving</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">What I work with</span><h2>Areas of expertise</h2><p>Practical tools and skills I use to design connected, helpful digital systems.</p></div>
+      <div class="grid">
+        <article class="glass tile"><div class="icon" aria-hidden="true">⟲</div><h3>AI Workflow Automation</h3><p>Automating repetitive business processes with n8n, triggers, conditional logic, and multi-step workflows.</p></article>
+        <article class="glass tile"><div class="icon" aria-hidden="true">✳</div><h3>AI Agents & Assistants</h3><p>Building AI-assisted workflows that classify information, support decisions, and route tasks to the right place.</p></article>
+        <article class="glass tile"><div class="icon" aria-hidden="true">⌘</div><h3>API Integrations</h3><p>Connecting services with APIs and webhooks to move data reliably between business tools.</p></article>
+        <article class="glass tile"><div class="icon" aria-hidden="true">{ }</div><h3>Programming</h3><p>Developing my JavaScript and Python skills for automation, data handling, and software projects.</p></article>
+        <article class="glass tile"><div class="icon" aria-hidden="true">▤</div><h3>CRM & Lead Operations</h3><p>Designing lead qualification, follow-up, and notification flows to keep opportunities organised.</p></article>
+        <article class="glass tile"><div class="icon" aria-hidden="true">↗</div><h3>Workflow Improvement</h3><p>Mapping manual processes and turning them into more consistent, trackable systems.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">Selected work</span><h2>Projects built to solve real tasks</h2><p>Explore the workflow projects available in my public GitHub repositories.</p></div>
+      <div class="projects">
+        <article class="glass project"><span class="label">n8n · Lead operations</span><h3>AI Lead Qualification & Follow-up System</h3><p>A workflow project focused on helping organise incoming leads, support qualification, and streamline follow-up actions.</p><a class="project-link" href="https://github.com/wheezmarv/AI-Lead-Qualification-Follow-up-System-n8n-" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></article>
+        <article class="glass project"><span class="label">n8n · Scheduling</span><h3>AI Appointment Scheduler</h3><p>An automation project exploring a smoother appointment scheduling process by connecting workflow steps and AI-assisted interactions.</p><a class="project-link" href="https://github.com/wheezmarv/AI-Appointment-Scheduler-n8n-" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head"><span class="kicker">How I can help</span><h2>Services I'm building and offering</h2><p>Clear, practical solutions tailored to a team's process and tools.</p></div>
+      <div class="steps">
+        <article class="glass step"><span class="num">01 / AUTOMATE</span><h3>Business workflow automation</h3><p>Connect apps, reduce repetitive data entry, and route updates with n8n workflows.</p></article>
+        <article class="glass step"><span class="num">02 / INTEGRATE</span><h3>API & app integrations</h3><p>Connect webhooks and APIs so tools can exchange information with less manual effort.</p></article>
+        <article class="glass step"><span class="num">03 / BUILD</span><h3>AI-powered workflows</h3><p>Add AI-assisted classification, summarisation, and routing to appropriate workflow steps.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="glass contact">
+        <div><span class="kicker">Have a project in mind?</span><h2>Let's build something useful.</h2><p>I'm open to freelance projects, collaboration, and remote opportunities in AI automation and software development. Reach out through my GitHub profile to start a conversation.</p></div>
+        <div class="contact-actions"><a class="btn primary" href="https://github.com/wheezmarv" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><a class="btn secondary" href="https://github.com/wheezmarv?tab=repositories" target="_blank" rel="noopener noreferrer">More projects</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Marvellous. Built with care.</span><span>AI Automation · Integrations · Software Development</span></div></footer>
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const navLinks = document.getElementById('navLinks');
+  menuButton.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
