@@ -1,148 +1,167 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Marvellous is an AI/ML engineer, automation developer, and software engineer focused on machine learning, intelligent workflows, and application development.">
-  <title>Marvellous | AI/ML Engineer, Automation & Software Engineering</title>
-  <style>
-    :root{--bg:#07111f;--bg2:#0b1830;--panel:rgba(17,35,61,.72);--line:rgba(151,183,220,.17);--text:#e8eff9;--muted:#aabbd1;--blue:#79b8ff;--cyan:#7be7e2;--shadow:0 24px 70px rgba(0,0,0,.25)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}
-    body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(42,102,168,.2),transparent 38%),radial-gradient(ellipse at 0% 40%,rgba(24,119,140,.12),transparent 32%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
-    a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
-    .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(151,183,220,.1);background:rgba(7,17,31,.78);backdrop-filter:blur(18px)}
-    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.2px}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--text)}
-    .menu{display:none;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 11px}
-    .hero{padding:94px 0 76px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:55px;min-height:590px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid rgba(123,231,226,.25);border-radius:999px;background:rgba(123,231,226,.07);color:#b7f5f0;font-size:.82rem;letter-spacing:.3px}
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.04;letter-spacing:-.055em;margin:23px 0 20px;max-width:760px}h1 .accent{background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .intro{font-size:1.08rem;color:var(--muted);max-width:650px;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:12px 18px;font-weight:700;border:1px solid var(--line);transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-2px);border-color:rgba(123,231,226,.5)}.btn.primary{color:#07111f;background:linear-gradient(105deg,#91c6ff,#8ce9df);border:0}.btn.secondary{background:rgba(255,255,255,.035);color:var(--text)}
-    .hero-card{position:relative;border:1px solid rgba(151,183,220,.2);background:linear-gradient(145deg,rgba(22,47,78,.83),rgba(12,27,48,.76));box-shadow:var(--shadow);border-radius:26px;padding:26px;overflow:hidden;isolation:isolate}.hero-card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(77,169,218,.14);filter:blur(28px);right:-90px;top:-100px;z-index:-1}
-    .card-top{display:flex;align-items:center;gap:7px;padding-bottom:18px;border-bottom:1px solid var(--line)}.orb{width:9px;height:9px;border-radius:50%;background:#8be7df}.card-top small{margin-left:auto;color:var(--muted)}.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem;color:#c7d7e9;padding:20px 0 8px}.code p{margin:9px 0}.code .key{color:#8edbd5}.code .value{color:#a7caff}.code .comment{color:#8297b0}.statrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.stat{border:1px solid var(--line);background:rgba(4,14,27,.36);padding:14px;border-radius:14px}.stat strong{display:block;font-size:1.1rem}.stat span{font-size:.78rem;color:var(--muted)}
-    section{padding:64px 0}.section-head{max-width:680px;margin-bottom:28px}.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.75rem}.section-head h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;letter-spacing:-.035em;margin:10px 0}.section-head p{color:var(--muted);margin:0}
-    .glass{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,38,65,.75),rgba(10,25,44,.72));backdrop-filter:blur(16px);border-radius:20px;box-shadow:0 14px 40px rgba(0,0,0,.12)}
-    .about{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:32px}.about p{color:var(--muted);margin-top:0}.chips{display:flex;flex-wrap:wrap;gap:9px;align-content:start}.chip{padding:8px 11px;border-radius:10px;border:1px solid var(--line);background:rgba(6,17,31,.38);color:#d4e2f2;font-size:.87rem}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile{padding:22px;min-height:190px}.tile .icon{font-size:1.35rem;margin-bottom:14px}.tile h3{margin:0 0 8px;font-size:1.08rem}.tile p{margin:0;color:var(--muted);font-size:.92rem}
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{padding:24px;display:flex;flex-direction:column;min-height:250px}.project .label{font-size:.75rem;color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.1em}.project h3{font-size:1.28rem;margin:10px 0}.project p{color:var(--muted);margin:0 0 18px}.project .project-link{margin-top:auto;color:#b7d8ff;font-weight:700;font-size:.92rem}.project-link:hover{color:var(--cyan)}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:22px}.num{color:var(--cyan);font-weight:900;font-size:.8rem;letter-spacing:.1em}.step h3{margin:8px 0}.step p{margin:0;color:var(--muted);font-size:.92rem}
-    .contact{padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}.contact h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:7px 0}.contact p{color:var(--muted);margin:0;max-width:620px}.contact-actions{display:flex;flex-wrap:wrap;gap:10px;flex-shrink:0}
-    footer{padding:28px 0 38px;color:#8fa4bd;font-size:.85rem;border-top:1px solid rgba(151,183,220,.1);margin-top:60px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:65px;gap:30px;min-height:auto}.hero-card{max-width:550px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}}
-    @media(max-width:600px){.wrap{width:min(100% - 28px,1100px)}nav{min-height:64px}.menu{display:block}.navlinks{display:none;position:absolute;left:14px;right:14px;top:63px;padding:16px;background:#0c1a2d;border:1px solid var(--line);border-radius:14px;flex-direction:column;gap:14px}.navlinks.open{display:flex}.hero{padding:54px 0 40px}h1{font-size:clamp(2.6rem,13vw,4rem)}section{padding:48px 0}.grid,.projects{grid-template-columns:1fr}.tile{min-height:auto}.contact{padding:24px}.statrow{gap:8px}.stat{padding:11px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8B1220">
+<meta name="description" content="Marvellous — AI automation, software engineering, ecommerce and connected digital systems.">
+<title>Wheezard — Marvellous | Design. Build. Automate.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --red:#8B1220;--red-glow:#C42333;--red-deep:#5A0A14;--cream:#FFF6EC;--yellow:#FFD43B;--ink:#1A0508;
+ --glass:rgba(255,255,255,.12);--glass-hover:rgba(255,255,255,.20);--glass-border:rgba(255,255,255,.22);
+ --glass-highlight:inset 0 1px 0 rgba(255,255,255,.25);--glass-shadow:0 8px 30px rgba(0,0,0,.18);
+ --radius-pill:9999px;--radius-card:22px;--radius-frame:16px;--ease:cubic-bezier(.2,.75,.25,1);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:#26040a;color:var(--cream);font-family:"DM Sans",sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.frame{position:relative;isolation:isolate;min-height:100vh;overflow:hidden;border-radius:var(--radius-frame);border:1px solid rgba(255,246,236,.12);background:radial-gradient(ellipse at 52% 43%,var(--red-glow) 0%,rgba(173,24,42,.82) 27%,transparent 61%),radial-gradient(ellipse at 48% 20%,#A7192B 0%,var(--red) 46%,var(--red-deep) 100%);box-shadow:0 0 0 5px #26040a}
+.frame:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:8;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+.frame:after{content:"";height:7px;background:var(--ink);position:absolute;bottom:0;left:0;right:0;z-index:9}
+.glass{background:var(--glass);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--glass-border);box-shadow:var(--glass-highlight),var(--glass-shadow)}
+.pill{border-radius:var(--radius-pill);transition:background .22s var(--ease),transform .22s var(--ease),border-color .22s var(--ease)}
+.pill:hover,.glass:hover{background:var(--glass-hover)}
+header{position:relative;z-index:10;padding:19px 32px}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;max-width:1600px;margin:auto}
+.nav-left,.nav-right{display:flex;align-items:center;gap:8px}.nav-right{justify-content:flex-end}
+.avatar-mini{width:32px;height:32px;flex:0 0 32px;border-radius:50%;border:2px solid var(--cream);display:grid;place-items:center;background:linear-gradient(145deg,#f4b0a1,#5b1725);color:var(--ink);font-weight:900;font-size:10px}
+.nav-link{display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;min-height:31px;font-size:10px;font-weight:800;letter-spacing:.08em;white-space:nowrap}
+.nav-link.active{background:var(--cream);color:var(--red-deep);box-shadow:0 3px 12px rgba(0,0,0,.12)}
+.brand{font-size:15px;font-weight:800;letter-spacing:-.03em;display:flex;align-items:center;gap:7px;white-space:nowrap}.brand-mark{color:var(--yellow);font-size:20px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,212,59,.25))}
+.icon-btn{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--glass-border);background:var(--glass);color:var(--cream);cursor:pointer}
+.menu-toggle{display:none}
+.hero{position:relative;min-height:min(770px,calc(100vh - 75px));max-width:1600px;margin:auto;display:grid;grid-template-columns:minmax(300px, .95fr) minmax(300px,1.2fr) minmax(240px,.8fr);align-items:center;padding:30px 48px 65px;gap:12px}
+.hero:before{content:"";position:absolute;width:50%;height:82%;left:26%;bottom:0;pointer-events:none;background:radial-gradient(ellipse,rgba(255,100,105,.28),rgba(196,35,51,.10) 38%,transparent 72%);z-index:-1}
+.left{position:relative;z-index:3;padding-bottom:35px}
+.eyebrow{display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:.12em;font-weight:800;margin-bottom:24px;animation:rise .6s var(--ease) .08s both}
+.check{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--yellow);color:var(--ink);font-size:12px;font-weight:900;letter-spacing:0}
+h1{font-family:"Archivo Black",Impact,sans-serif;text-transform:uppercase;font-size:clamp(56px,7.3vw,110px);line-height:.91;letter-spacing:-.055em;margin:0 0 22px}
+h1 span{display:block;animation:rise .6s var(--ease) both}h1 span:nth-child(1){animation-delay:.14s}h1 span:nth-child(2){animation-delay:.22s}h1 span:nth-child(3){animation-delay:.30s;color:var(--yellow)}
+.intro{max-width:310px;font-size:13px;line-height:1.55;color:rgba(255,246,236,.78);margin:0 0 25px;animation:rise .6s var(--ease) .38s both}.intro strong{color:var(--cream)}
+.actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;animation:rise .6s var(--ease) .46s both}
+.primary{display:inline-flex;align-items:center;gap:13px;padding:8px 10px 8px 22px;background:var(--ink);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-pill);font-size:11px;font-weight:800;letter-spacing:.04em;transition:transform .2s var(--ease)}
+.primary:hover{transform:translateY(-2px)}.arrow-circle{width:28px;height:28px;display:grid;place-items:center;background:rgba(255,246,236,.12);border-radius:50%;font-size:15px;transition:transform .25s var(--ease),background .25s}.primary:hover .arrow-circle{transform:translateX(3px);background:rgba(255,246,236,.24)}
+.watch{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:.06em}.play{width:38px;height:38px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-size:13px;padding-left:2px;box-shadow:0 6px 18px rgba(0,0,0,.13);transition:transform .2s}.watch:hover .play{transform:scale(1.06)}
+.watch-label{padding:11px 15px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.04);border-radius:var(--radius-pill)}
+.gate{position:absolute;left:48px;bottom:17px;display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:.1em;color:rgba(255,246,236,.72);font-weight:700}
+.gate-line{width:74px;height:1px;background:rgba(255,246,236,.5);position:relative}.gate-line:after{content:"";position:absolute;left:37%;top:-4px;width:9px;height:9px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+.center{position:relative;align-self:stretch;min-height:570px;display:flex;align-items:flex-end;justify-content:center;z-index:2}
+.portrait-glow{position:absolute;width:85%;height:70%;bottom:0;left:7%;background:radial-gradient(ellipse,rgba(255,111,113,.35),transparent 69%);filter:blur(12px)}
+.portrait{position:relative;width:min(100%,500px);height:90%;min-height:510px;display:flex;align-items:flex-end;justify-content:center;transform:translate3d(var(--px,0),var(--py,0),0);transition:transform .18s ease-out;filter:drop-shadow(0 20px 28px rgba(30,0,6,.28))}
+.portrait:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:24%;background:linear-gradient(to bottom,transparent,rgba(139,18,32,.78) 74%,var(--red));pointer-events:none}
+.person-placeholder{position:relative;width:83%;height:89%;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:48% 48% 16% 16% / 30% 30% 8% 8%;background:radial-gradient(ellipse at 50% 22%,rgba(255,246,236,.18),transparent 42%),linear-gradient(145deg,rgba(255,246,236,.17),rgba(45,2,12,.16));border:1px solid rgba(255,246,236,.16);box-shadow:inset 0 0 55px rgba(255,212,59,.05),0 0 40px rgba(255,88,98,.16)}
+.person-placeholder:before{content:"";position:absolute;top:14%;width:35%;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#f2c1a2,#a65c51 75%,#6b2930);box-shadow:0 0 0 7px rgba(255,246,236,.05)}
+.person-placeholder:after{content:"";position:absolute;bottom:-4%;width:78%;height:62%;border-radius:46% 46% 0 0;background:linear-gradient(120deg,#31121c,#10090f 48%,#6a1828);box-shadow:inset 14px 0 22px rgba(255,212,59,.07)}
+.initials{position:relative;z-index:1;margin-top:45%;font-family:"Archivo Black",sans-serif;font-size:clamp(42px,6vw,76px);color:rgba(255,246,236,.82);text-shadow:0 5px 22px rgba(0,0,0,.2)}
+.scroll-badge{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);width:82px;height:82px;border-radius:50%;display:grid;place-items:center;z-index:4}
+.scroll-badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 14s linear infinite;overflow:visible}.scroll-badge text{fill:var(--cream);font-size:9px;font-weight:700;letter-spacing:2px}.badge-arrow{font-size:24px;color:var(--yellow);line-height:1}
+.right{position:relative;z-index:4;align-self:stretch;display:flex;flex-direction:column;align-items:flex-end;padding-top:52px;min-width:0}
+.mission{width:220px;text-align:right;margin-bottom:auto;animation:rise .6s var(--ease) .22s both}
+.avatar-stack{display:flex;justify-content:flex-end;align-items:center;margin-bottom:15px;padding-right:2px}
+.stack-avatar{width:29px;height:29px;margin-left:-8px;border-radius:50%;border:2px solid var(--cream);background:linear-gradient(145deg,#f4c1a7,#7d2634);display:grid;place-items:center;color:#381017;font-size:8px;font-weight:900}
+.stack-avatar:nth-child(2){background:linear-gradient(145deg,#d3b9a2,#51465c)}.stack-avatar:nth-child(3){background:linear-gradient(145deg,#f6d58a,#9c5838)}.stack-avatar:nth-child(4){background:linear-gradient(145deg,#c7d7d4,#506c75)}.stack-avatar:nth-child(5){background:linear-gradient(145deg,#e4a4a1,#5e283a)}
+.stack-plus{width:29px;height:29px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;margin-left:-5px;font-weight:900;font-size:18px}
+.mission h2{font-size:14px;line-height:1.25;margin:0 0 5px;font-weight:800}.mission p{font-size:10px;line-height:1.45;color:rgba(255,246,236,.62);margin:0}
+.cards-wrap{width:min(100%,440px);overflow:visible;align-self:flex-end;margin-top:35px;animation:rise .6s var(--ease) .54s both}
+.cards{display:flex;gap:12px;overflow-x:auto;overflow-y:visible;padding:10px 4px 14px;scroll-snap-type:x mandatory;scrollbar-width:none}.cards::-webkit-scrollbar{display:none}
+.feature-card{position:relative;flex:0 0 190px;height:130px;padding:14px;border-radius:var(--radius-card);scroll-snap-align:start;transition:transform .22s var(--ease),background .22s;overflow:hidden}
+.feature-card:hover{transform:translateY(-4px) scale(1.02);background:var(--glass-hover)}
+.feature-card h3{font-size:13px;line-height:1.15;margin:0 55px 7px 0;max-width:120px}.feature-card p{font-size:10px;line-height:1.3;color:rgba(255,246,236,.68);margin:0;max-width:118px}
+.thumb{position:absolute;right:11px;top:12px;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:var(--yellow);font-size:21px;background:linear-gradient(145deg,rgba(255,212,59,.26),rgba(26,5,8,.42));border:1px solid rgba(255,255,255,.15)}
+.go{position:absolute;bottom:12px;left:13px;border:0;background:var(--ink);color:var(--cream);border-radius:var(--radius-pill);font-size:10px;font-weight:800;letter-spacing:.06em;padding:6px 16px;cursor:pointer;transition:transform .2s}.go:hover{transform:translateX(3px)}
+.content-sections{position:relative;z-index:2;background:linear-gradient(180deg,rgba(73,5,16,.15),rgba(35,3,9,.78));padding:75px 48px 80px;border-top:1px solid rgba(255,255,255,.12)}
+.content-inner{max-width:1200px;margin:auto}.section-heading{margin-bottom:26px}.kicker{font-size:10px;letter-spacing:.16em;font-weight:800;color:var(--yellow);text-transform:uppercase}.section-heading h2{font-family:"Archivo Black",sans-serif;font-size:clamp(27px,4vw,44px);line-height:1.04;text-transform:uppercase;margin:10px 0 9px;letter-spacing:-.04em}.section-heading p{max-width:620px;font-size:14px;color:rgba(255,246,236,.72);margin:0}
+.info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.info-card{padding:22px;border-radius:var(--radius-card);min-height:160px;transition:transform .22s var(--ease),background .22s}.info-card:hover{transform:translateY(-4px);background:var(--glass-hover)}.info-card .symbol{font-size:22px;color:var(--yellow);margin-bottom:12px}.info-card h3{font-size:15px;margin:0 0 8px}.info-card p{font-size:12px;line-height:1.55;color:rgba(255,246,236,.7);margin:0}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}.project{padding:22px;border-radius:var(--radius-card)}.project .tag{color:var(--yellow);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.project h3{font-size:17px;margin:8px 0}.project p{font-size:12px;color:rgba(255,246,236,.72);line-height:1.55}.project a{font-size:11px;font-weight:800;color:var(--yellow)}.contact-panel{margin-top:42px;padding:25px;border-radius:var(--radius-card);display:flex;justify-content:space-between;align-items:center;gap:22px}.contact-panel h2{font-family:"Archivo Black",sans-serif;font-size:clamp(23px,3vw,36px);text-transform:uppercase;line-height:1.04;margin:9px 0}.contact-panel p{font-size:12px;color:rgba(255,246,236,.72);max-width:650px;margin:0}.contact-links{display:flex;gap:9px;flex-wrap:wrap;flex-shrink:0}.contact-links a{font-size:10px;font-weight:800;padding:11px 15px;border-radius:var(--radius-pill);white-space:nowrap}.contact-links a:first-child{background:var(--yellow);color:var(--ink)}.contact-links a:last-child{border:1px solid var(--glass-border);background:var(--glass)}
+footer{position:relative;z-index:2;padding:20px 48px 27px;display:flex;justify-content:space-between;gap:15px;color:rgba(255,246,236,.58);font-size:10px}
+.cursor{position:fixed;left:0;top:0;width:28px;height:28px;border:1.5px solid var(--cream);border-radius:50%;pointer-events:none;z-index:20;opacity:0;transform:translate(-50%,-50%);mix-blend-mode:screen}.cursor:after{content:"";position:absolute;width:3px;height:3px;background:var(--cream);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}@keyframes spin{to{transform:rotate(360deg)}}
+@media(min-width:1450px){.hero{min-height:calc(100vh - 75px)}}
+@media(max-width:1100px){.hero{grid-template-columns:minmax(280px,.9fr) minmax(280px,1fr);padding-left:34px;padding-right:34px;min-height:740px}.center{position:absolute;left:33%;right:28%;bottom:0;top:70px;min-height:0;opacity:.88}.portrait{height:100%;min-height:500px}.left{max-width:410px}.right{grid-column:2;grid-row:1;padding-top:35px}.mission{display:none}.cards-wrap{margin-top:auto;width:min(100%,420px)}.gate{left:34px}.content-sections{padding-left:34px;padding-right:34px}}
+@media(max-width:700px){header{padding:14px 17px}.nav{display:flex;justify-content:space-between}.nav-left .nav-link,.nav-right .nav-link,.nav-right .icon-btn{display:none}.nav-left{gap:0}.brand{margin:auto}.menu-toggle{display:grid;width:34px;height:34px;place-items:center;background:var(--glass);border:1px solid var(--glass-border);color:var(--cream);border-radius:50%;cursor:pointer}.nav-links-mobile{display:none;position:absolute;top:59px;left:12px;right:12px;padding:12px;gap:8px;flex-wrap:wrap;border-radius:18px;background:rgba(89,8,20,.95)}.nav-links-mobile.open{display:flex}.nav-links-mobile a{padding:9px 13px;font-size:10px;font-weight:800;letter-spacing:.08em}.hero{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:20px 19px 35px;min-height:0}.center{position:relative;order:0;top:auto;left:auto;right:auto;bottom:auto;min-height:310px;height:310px;width:100%;opacity:1;margin-bottom:-22px}.portrait{min-height:0;height:100%;width:80%;max-width:300px}.person-placeholder{height:100%;width:80%}.person-placeholder:before{top:12%;width:33%}.person-placeholder:after{height:60%}.initials{font-size:50px}.scroll-badge{width:68px;height:68px;bottom:1px;left:75%}.scroll-badge text{font-size:9px}.left{order:1;padding:0 0 48px}.eyebrow{margin-bottom:15px;font-size:9px}h1{font-size:clamp(51px,15vw,83px);margin-bottom:15px}.intro{max-width:380px;font-size:12px;margin-bottom:18px}.gate{left:20px;bottom:12px}.right{order:2;display:block;padding:0}.mission{display:none}.cards-wrap{width:calc(100% + 19px);margin-top:0;align-self:auto}.cards{padding-left:0}.feature-card{flex-basis:174px;height:125px}.content-sections{padding:53px 19px 55px}.info-grid{grid-template-columns:1fr 1fr;gap:10px}.info-card{padding:16px;min-height:160px}.info-card h3{font-size:13px}.info-card p{font-size:11px}.projects{grid-template-columns:1fr}.contact-panel{align-items:flex-start;flex-direction:column;padding:20px}.contact-links{margin-top:4px}footer{padding:18px 19px 24px;flex-direction:column}.cursor{display:none}}
+@media(max-width:390px){.info-grid{grid-template-columns:1fr}.center{height:270px;min-height:270px}.actions{gap:8px}.primary{padding-left:15px}.watch-label{padding:10px 12px}}
+@media(hover:none),(pointer:coarse){.cursor{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div class="frame" id="home">
 <header>
-  <nav class="wrap" aria-label="Main navigation">
-    <a class="brand" href="#home">Marvellous<span>.</span></a>
-    <button class="menu" id="menuButton" aria-expanded="false" aria-controls="navLinks">Menu</button>
-    <div class="navlinks" id="navLinks">
-      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a>
-    </div>
-  </nav>
+ <nav class="nav" aria-label="Main navigation">
+  <div class="nav-left">
+   <div class="avatar-mini" aria-label="Marvellous initials">M</div>
+   <a class="nav-link pill active" href="#home">HOME</a><a class="nav-link pill glass" href="#story">STORY</a><a class="nav-link pill glass" href="#services">SERVICES</a>
+  </div>
+  <a class="brand" href="#home"><span class="brand-mark">✦</span> wheezard</a>
+  <div class="nav-right"><a class="nav-link pill glass" href="#projects">PROJECTS</a><a class="nav-link pill glass" href="#contact">CONTACT</a><button class="icon-btn" aria-label="Find projects" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="icon-btn" aria-label="Jump to services" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+ </nav>
+ <div class="nav-links-mobile glass" id="mobileNav"><a href="#home">HOME</a><a href="#story">STORY</a><a href="#services">SERVICES</a><a href="#projects">PROJECTS</a><a href="#contact">CONTACT</a></div>
 </header>
 <main>
-  <div class="wrap hero" id="home">
-    <div>
-      <div class="eyebrow"><span class="dot"></span> AI/ML Engineering · Automation · Software Engineering</div>
-      <h1>Building useful tech that <span class="accent">works smarter.</span></h1>
-      <p class="intro">I'm Marvellous, an AI/ML engineer, automation developer, and software engineering professional focused on building intelligent applications, practical automations, and connected digital systems. I turn ideas and repetitive processes into useful technology.</p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
-        <a class="btn secondary" href="#contact">Let's connect</a>
-      </div>
-    </div>
-    <aside class="hero-card" aria-label="Automation code illustration">
-      <div class="card-top"><span class="orb"></span><span class="orb"></span><span class="orb"></span><small>workflow.js</small></div>
-      <div class="code">
-        <p><span class="comment">// Turn repetitive tasks into systems</span></p>
-        <p><span class="key">const</span> workflow = {</p>
-        <p>&nbsp;&nbsp;trigger: <span class="value">"new lead"</span>,</p>
-        <p>&nbsp;&nbsp;qualify: <span class="value">"AI analysis"</span>,</p>
-        <p>&nbsp;&nbsp;actions: [</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"update CRM"</span>,</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"notify team"</span>,</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"follow up"</span></p>
-        <p>&nbsp;&nbsp;]</p><p>};</p>
-      </div>
-      <div class="statrow"><div class="stat"><strong>n8n + APIs</strong><span>Connected workflows</span></div><div class="stat"><strong>AI-first</strong><span>Practical solutions</span></div></div>
-    </aside>
+<section class="hero" aria-labelledby="hero-title">
+ <div class="left">
+  <div class="eyebrow"><span class="check">✓</span> SHOPIFY DEVELOPER & EMAIL SPECIALIST</div>
+  <h1 id="hero-title"><span>DESIGN.</span><span>BUILD.</span><span>AUTOMATE.</span></h1>
+  <p class="intro"><strong>Hey, I'm Marvellous.</strong> I design digital experiences, build connected applications, and automate repetitive work with AI, APIs, and thoughtful engineering.</p>
+  <div class="actions"><a class="primary" href="#projects">EXPLORE MY WORK <span class="arrow-circle">↗</span></a><a class="watch" href="#story" aria-label="Watch my story"><span class="play">▶</span><span class="watch-label glass">MY STORY</span></a></div>
+ </div>
+ <div class="center" aria-label="Portrait area">
+  <div class="portrait-glow"></div>
+  <div class="portrait" id="portrait"><div class="person-placeholder" role="img" aria-label="Temporary portrait placeholder for Marvellous"><span class="initials">M.</span></div></div>
+  <div class="scroll-badge" aria-label="Scroll to explore"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="circlePath" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0"/></defs><text><textPath href="#circlePath">SCROLL TO EXPLORE • SCROLL TO EXPLORE • </textPath></text></svg><span class="badge-arrow">↓</span></div>
+ </div>
+ <div class="right">
+  <div class="mission"><div class="avatar-stack" aria-hidden="true"><span class="stack-avatar">M</span><span class="stack-avatar">AI</span><span class="stack-avatar">JS</span><span class="stack-avatar">UX</span><span class="stack-avatar">∞</span><span class="stack-plus">+</span></div><h2>The mission starts now</h2><p>Smart systems. Better experiences. Real-world impact.</p></div>
+  <div class="cards-wrap"><div class="cards">
+   <article class="feature-card glass"><div class="thumb">◫</div><h3>Shopify<br>Stores</h3><p>Thoughtful ecommerce experiences.</p><a class="go" href="#services">GO ↗</a></article>
+   <article class="feature-card glass"><div class="thumb">✉</div><h3>Email<br>Campaigns</h3><p>CRM journeys that keep customers close.</p><a class="go" href="#services">GO ↗</a></article>
+   <article class="feature-card glass"><div class="thumb">✳</div><h3>AI<br>Automation</h3><p>Connected tools. Less busywork.</p><a class="go" href="#projects">GO ↗</a></article>
+  </div></div>
+ </div>
+ <div class="gate"><span>GATE</span><span class="gate-line"></span><span>56° LEFT</span></div>
+</section>
+<section class="content-sections" id="story">
+ <div class="content-inner">
+  <div class="section-heading reveal"><span class="kicker">THE STORY</span><h2>Curiosity into useful technology.</h2><p>I'm Marvellous, an AI/ML engineer, automation developer, and software engineering professional focused on building intelligent applications, practical automations, and connected digital systems. I turn ideas and repetitive processes into useful technology.</p></div>
+  <div class="info-grid" id="services">
+   <article class="info-card glass reveal"><div class="symbol">◫</div><h3>Shopify & Ecommerce</h3><p>Designing and improving online storefronts, product experiences, collections, and customer journeys.</p></article>
+   <article class="info-card glass reveal"><div class="symbol">✉</div><h3>Email & CRM</h3><p>Creating customer lifecycle campaigns, CRM workflows, segmentation, and automated follow-up.</p></article>
+   <article class="info-card glass reveal"><div class="symbol">⟲</div><h3>Workflow Automation</h3><p>Building n8n and Zapier automations to connect business tools, reduce repetitive tasks, and route updates.</p></article>
+   <article class="info-card glass reveal"><div class="symbol">✳</div><h3>AI Agents & Integrations</h3><p>Connecting APIs and webhooks and exploring AI-assisted workflows for practical business processes.</p></article>
+   <article class="info-card glass reveal"><div class="symbol">{ }</div><h3>Software Engineering</h3><p>Developing with JavaScript, Node.js, Python, Tailwind CSS, and cross-platform mobile technologies.</p></article>
+   <article class="info-card glass reveal"><div class="symbol">⌁</div><h3>AI & Machine Learning</h3><p>Building technical foundations for intelligent applications and data-informed problem solving.</p></article>
   </div>
-
-  <section id="about">
-    <div class="wrap">
-      <div class="section-head"><span class="kicker">A little about me</span><h2>Curious about technology. Focused on solving problems.</h2></div>
-      <div class="glass about">
-        <div><p>My work sits at the intersection of AI automation and software development. I enjoy connecting tools, APIs, and AI capabilities into clear workflows that solve real business problems—from lead follow-up to appointment scheduling.</p><p>I'm continuously improving my skills through hands-on projects and technical learning. My approach is simple: understand the problem, build a useful solution, test it, and keep making it better.</p></div>
-        <div class="chips" aria-label="Technology stack"><span class="chip">n8n</span><span class="chip">AI Automation</span><span class="chip">AI Agents</span><span class="chip">API Integrations</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">Workflow Design</span><span class="chip">Problem Solving</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="expertise">
-    <div class="wrap">
-      <div class="section-head"><span class="kicker">What I work with</span><h2>Areas of expertise</h2><p>AI, automation, web and mobile development technologies I use and continue to develop.</p></div>
-      <div class="grid">
-        <article class="glass tile"><div class="icon" aria-hidden="true">✳</div><h3>AI & Machine Learning</h3><p>Exploring machine learning concepts and AI-powered solutions for useful, real-world applications.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">⟲</div><h3>Workflow Automation</h3><p>Designing multi-step automations with n8n and Zapier to reduce repetitive work and connect business tools.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">⌘</div><h3>AI Agents & API Integrations</h3><p>Connecting APIs and webhooks and building AI-assisted workflows that move information between services.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">{ }</div><h3>JavaScript & Node.js</h3><p>Building programming foundations for automation, backend logic, APIs, and software applications.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">▱</div><h3>Flutter & React Native</h3><p>Developing cross-platform mobile app skills for building experiences across Android and iOS.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">◈</div><h3>Tailwind CSS</h3><p>Creating responsive, consistent user interfaces with utility-first styling and modern layout patterns.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">▤</div><h3>Web & Software Engineering</h3><p>Applying software development principles to plan, build, test, and improve digital products.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">↗</div><h3>CRM & Lead Operations</h3><p>Organising lead qualification, follow-up, and notifications to help teams manage opportunities.</p></article>
-        <article class="glass tile"><div class="icon" aria-hidden="true">⌁</div><h3>Python</h3><p>Building Python skills for data processing, automation, machine learning, and application logic.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="wrap">
-      <div class="section-head"><span class="kicker">Selected work</span><h2>Projects built to solve real tasks</h2><p>Explore the workflow projects available in my public GitHub repositories.</p></div>
-      <div class="projects">
-        <article class="glass project"><span class="label">n8n · Lead operations</span><h3>AI Lead Qualification & Follow-up System</h3><p>A workflow project focused on helping organise incoming leads, support qualification, and streamline follow-up actions.</p><a class="project-link" href="https://github.com/wheezmarv/AI-Lead-Qualification-Follow-up-System-n8n-" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></article>
-        <article class="glass project"><span class="label">n8n · Scheduling</span><h3>AI Appointment Scheduler</h3><p>An automation project exploring a smoother appointment scheduling process by connecting workflow steps and AI-assisted interactions.</p><a class="project-link" href="https://github.com/wheezmarv/AI-Appointment-Scheduler-n8n-" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="wrap">
-      <div class="section-head"><span class="kicker">How I can help</span><h2>Services I'm building and offering</h2><p>Clear, practical solutions tailored to a team's process and tools.</p></div>
-      <div class="steps">
-        <article class="glass step"><span class="num">01 / AUTOMATE</span><h3>Business workflow automation</h3><p>Connect apps, reduce repetitive data entry, and route updates with n8n workflows.</p></article>
-        <article class="glass step"><span class="num">02 / INTEGRATE</span><h3>API & app integrations</h3><p>Connect webhooks and APIs so tools can exchange information with less manual effort.</p></article>
-        <article class="glass step"><span class="num">03 / BUILD</span><h3>AI-powered workflows</h3><p>Add AI-assisted classification, summarisation, and routing to appropriate workflow steps.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <div class="glass contact">
-        <div><span class="kicker">Have a project in mind?</span><h2>Let's build something useful.</h2><p>I'm open to freelance projects, collaboration, and remote opportunities in AI automation and software development. Reach out through my GitHub profile to start a conversation.</p></div>
-        <div class="contact-actions"><a class="btn primary" href="https://github.com/wheezmarv" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><a class="btn secondary" href="https://github.com/wheezmarv?tab=repositories" target="_blank" rel="noopener noreferrer">More projects</a></div>
-      </div>
-    </div>
-  </section>
+  <div class="section-heading reveal" id="projects" style="margin-top:56px"><span class="kicker">SELECTED PROJECTS</span><h2>Built to make work flow.</h2><p>Explore these public n8n workflow projects and the ideas behind them.</p></div>
+  <div class="projects">
+   <article class="project glass reveal"><span class="tag">N8N · LEAD OPERATIONS</span><h3>AI Lead Qualification & Follow-up System</h3><p>A workflow project focused on organising incoming leads, supporting qualification, and streamlining follow-up actions.</p><a href="https://github.com/wheezmarv/AI-Lead-Qualification-Follow-up-System-n8n-" target="_blank" rel="noopener noreferrer">VIEW PROJECT ON GITHUB ↗</a></article>
+   <article class="project glass reveal"><span class="tag">N8N · SCHEDULING</span><h3>AI Appointment Scheduler</h3><p>An automation project exploring a smoother appointment scheduling process by connecting workflow steps and AI-assisted interactions.</p><a href="https://github.com/wheezmarv/AI-Appointment-Scheduler-n8n-" target="_blank" rel="noopener noreferrer">VIEW PROJECT ON GITHUB ↗</a></article>
+  </div>
+  <div class="contact-panel glass reveal" id="contact"><div><span class="kicker">LET'S CONNECT</span><h2>Let's make something happen.</h2><p>I'm open to freelance projects, collaborations, and remote opportunities in AI automation, ecommerce, and software development.</p></div><div class="contact-links"><a href="https://github.com/wheezmarv" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="https://github.com/wheezmarv?tab=repositories" target="_blank" rel="noopener noreferrer">MORE PROJECTS ↗</a></div></div>
+ </div>
+</section>
 </main>
-<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Marvellous. Built with care.</span><span>AI Automation · Integrations · Software Development</span></div></footer>
+<footer><span>© <span id="year"></span> Wheezard / Marvellous</span><span>DESIGN · BUILD · AUTOMATE</span></footer>
+</div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 <script>
-  const menuButton = document.getElementById('menuButton');
-  const navLinks = document.getElementById('navLinks');
-  menuButton.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(open));
-  });
-  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
-  }));
-  document.getElementById('year').textContent = new Date().getFullYear();
+const toggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
+toggle.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const cursor=document.getElementById('cursor');let mx=0,my=0,cx=0,cy=0;
+window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.opacity='1'});
+function cursorFrame(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;cursor.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(cursorFrame)}cursorFrame();
+const portrait=document.getElementById('portrait');
+window.addEventListener('mousemove',e=>{if(matchMedia('(pointer:fine)').matches){const x=(e.clientX/innerWidth-.5)*-20,y=(e.clientY/innerHeight-.5)*-16;portrait.style.setProperty('--px',x+'px');portrait.style.setProperty('--py',y+'px')}});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
