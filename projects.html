@@ -183,7 +183,7 @@ app.get("/webhooks/meta", (req, res) =&gt; {
   }
   return res.sendStatus(403);
 });</code></pre><p><strong>Outgoing message:</strong> The recorded request uses the Meta Graph API <code>/{PHONE_NUMBER_ID}/messages</code> endpoint with a Bearer access token and a fixed welcome reply. The documented code is a representative reconstruction, not a byte-for-byte export of the current server file.</p><p><strong>Next milestone:</strong> Complete and verify a real WhatsApp message round trip, then harden webhook validation and add AI response generation.</p></div></details>
-</article>
+<p class="source-link"><a href="https://github.com/wheezmarv/OmniReply-AI-WhatsApp-Messenger" target="_blank" rel="noopener noreferrer">EXPLORE SOURCE PROJECT ↗</a></p></article>
 <article class="project glass reveal"><span class="tag">CASE STUDY 04 · BASE44 · AI CRM · SALES AUTOMATION</span><h3>SalesPilot AI — WhatsApp CRM &amp; Sales Agent</h3>
 <p><strong>Overview:</strong> A WhatsApp-first CRM and sales automation application designed for Nigerian SMEs. It aims to organise business workspaces, customers, leads, product/service catalogues, and customer conversations, with an AI sales assistant grounded in each business's approved information.</p>
 <p><strong>Engineering work:</strong> Base44 application build, multi-business data model, workspace membership roles, customer/lead/product schemas, CRM workflows, WhatsApp inbox direction, and AI sales-agent design with controlled lead capture and human escalation.</p>
@@ -204,7 +204,7 @@ const newLead = await base44.entities.Lead.create({
   stage: "new",
   notes: "Enquired about a product"
 });</code></pre><p><strong>AI sales-agent flow:</strong> Resolve the authenticated business, load only its profile/catalogue/FAQs and conversation history, draft a grounded response, validate claims, and hand off complaints, sensitive cases, explicit human requests, or low-confidence answers.</p><p><strong>Code note:</strong> These are documented SDK/reference patterns, not an export of the deployed Base44 source. Direct source-file inspection was unavailable in the documented build environment.</p><p><strong>Next milestone:</strong> Fix and verify the AI Sales Agent playground, business-knowledge grounding, tenant isolation and escalation behavior before completing official WhatsApp integration.</p></div></details>
-</article>
+<p class="source-link"><a href="https://github.com/wheezmarv/SalesPilot-AI" target="_blank" rel="noopener noreferrer">EXPLORE SOURCE PROJECT ↗</a></p></article>
 </div></div></section></main><footer><span>© <span id="year"></span> Wheezard / Marvellous</span><span>DESIGN · BUILD · AUTOMATE</span></footer><div class="cursor" id="cursor" aria-hidden="true"></div><script>
 const toggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
 if(toggle&&mobileNav){toggle.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));}
