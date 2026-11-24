@@ -113,6 +113,31 @@ footer{position:relative;z-index:2;padding:20px 48px 27px;display:flex;justify-c
 .skill-tags span{padding:9px 13px;font-size:11px;font-weight:700;border:1px solid var(--glass-border);background:var(--glass);border-radius:999px}
 .projects{margin-top:0}.project{min-height:100%}
 @media(max-width:700px){.page-hero{padding:42px 19px 25px}.page-content{padding:10px 19px 55px}.nav{display:flex;justify-content:space-between}.nav-left .nav-link,.nav-right .nav-link{display:none}.nav-left{gap:0}.brand{margin:auto}.menu-toggle{display:grid;width:34px;height:34px;place-items:center;background:var(--glass);border:1px solid var(--glass-border);color:var(--cream);border-radius:50%;cursor:pointer}.nav-links-mobile{display:none;position:absolute;top:59px;left:12px;right:12px;padding:12px;gap:8px;flex-wrap:wrap;border-radius:18px;background:rgba(89,8,20,.97)}.nav-links-mobile.open{display:flex}.nav-links-mobile a{padding:9px 13px;font-size:10px;font-weight:800;letter-spacing:.08em}}
+
+/* Portfolio-wide brighter, glossy pulse treatment */
+:root{--shine-gold:rgba(255,212,59,.72);--shine-white:rgba(255,246,236,.42)}
+.nav-link,.primary,.watch-label,.play,.go,.project,.skill-item,.contact-card,.contact-note{
+  transition:filter .25s ease,box-shadow .25s ease,border-color .25s ease,transform .25s ease;
+}
+.nav-link:not(.active){box-shadow:0 0 8px rgba(255,212,59,.14),inset 0 1px 0 rgba(255,246,236,.18)}
+.nav-link.active{box-shadow:0 0 12px rgba(255,212,59,.4),0 0 24px rgba(255,212,59,.2),inset 0 1px 0 rgba(255,246,236,.3)}
+.primary,.watch-label,.play,.go{filter:brightness(1.08) saturate(1.12)}
+.primary:hover,.watch-label:hover,.play:hover,.go:hover,.nav-link:hover{filter:brightness(1.28) saturate(1.2);box-shadow:0 0 0 2px rgba(255,212,59,.28),0 0 20px rgba(255,212,59,.55),0 0 36px rgba(255,212,59,.22)}
+.project{animation:surfaceShine 3.2s ease-in-out infinite;box-shadow:0 0 10px rgba(255,212,59,.10),inset 0 1px 0 rgba(255,246,236,.14)}
+.project:nth-child(2n){animation-delay:1.1s}
+.project a{display:inline-block;text-shadow:0 0 8px rgba(255,212,59,.38)}
+.skill-item{border-color:rgba(255,246,236,.42)!important;background:rgba(255,246,236,.13)!important}
+.skill-logo{box-shadow:0 0 12px rgba(255,212,59,.42),0 0 22px rgba(255,212,59,.2)}
+.contact-card{animation:surfaceShine 2.9s ease-in-out infinite;box-shadow:0 0 12px rgba(255,212,59,.18),inset 0 1px 0 rgba(255,246,236,.2)}
+.contact-card:nth-child(2n){animation-delay:.65s}
+.contact-icon{box-shadow:0 0 12px rgba(255,212,59,.38),0 0 22px rgba(255,212,59,.16)}
+@keyframes surfaceShine{
+  0%,100%{filter:brightness(1.02);box-shadow:0 0 8px rgba(255,212,59,.12),inset 0 1px 0 rgba(255,246,236,.12)}
+  50%{filter:brightness(1.2);box-shadow:0 0 0 1px rgba(255,212,59,.3),0 0 19px rgba(255,212,59,.42),0 0 34px rgba(255,212,59,.18),inset 0 1px 0 rgba(255,246,236,.38)}
+}
+@media(prefers-reduced-motion:reduce){
+ .project,.contact-card{animation:none}
+}
 </style></head><body><div class="frame" id="home"><header>
  <nav class="nav" aria-label="Main navigation">
   <div class="nav-left"><div class="avatar-mini" aria-label="Marvellous initials">M</div><a class="nav-link pill active" href="index.html">HOME</a></div>
