@@ -127,6 +127,16 @@ footer{position:relative;z-index:2;padding:20px 48px 27px;display:flex;justify-c
 @media(prefers-reduced-motion:reduce){
  .project,.contact-card{animation:none}
 }
+
+.project-details{margin-top:15px;border-top:1px solid rgba(255,246,236,.2);padding-top:12px}
+.project-details summary{cursor:pointer;color:var(--yellow);font-size:11px;font-weight:800;letter-spacing:.04em;list-style:none}
+.project-details summary::-webkit-details-marker{display:none}
+.project-details summary:after{content:"＋";float:right;font-size:15px}
+.project-details[open] summary:after{content:"−"}
+.detail-body{padding-top:10px}
+.detail-body p{font-size:11px;line-height:1.6}
+.detail-body pre{white-space:pre-wrap;overflow-wrap:anywhere;background:rgba(18,3,7,.65);border:1px solid rgba(255,246,236,.16);border-radius:12px;padding:13px;color:#FFF6EC;font-size:10px;line-height:1.55;overflow-x:auto}
+.detail-body code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
 </style></head><body><div class="frame"><header>
  <nav class="nav" aria-label="Main navigation">
   <div class="nav-left"><div class="avatar-mini" aria-label="Marvellous initials">M</div><a class="nav-link pill glass" href="index.html">HOME</a></div>
@@ -147,6 +157,54 @@ footer{position:relative;z-index:2;padding:20px 48px 27px;display:flex;justify-c
 <p><strong>Tools:</strong> n8n and AI-assisted workflow logic; calendar, messaging, or other integrations depend on the specific workflow configuration.</p>
 <p><strong>Intended impact:</strong> A smoother booking journey, fewer manual coordination steps, and more consistent handling of scheduling requests. These are intended benefits, not verified metrics.</p>
 <a href="https://github.com/wheezmarv/AI-Appointment-Scheduler-n8n-" target="_blank" rel="noopener noreferrer">EXPLORE SOURCE PROJECT ↗</a></article>
+
+<article class="project glass reveal"><span class="tag">CASE STUDY 03 · NODE.JS · WHATSAPP CLOUD API</span><h3>OmniReply AI — WhatsApp Messaging Automation</h3>
+<p><strong>Overview:</strong> A business messaging automation backend built around Meta WhatsApp webhooks. It receives inbound WhatsApp events through an Express server and attempts to send an automated text response through the WhatsApp Cloud API.</p>
+<p><strong>Engineering work:</strong> Node.js/Express server setup, environment-based configuration, health endpoint, Meta webhook verification, inbound event parsing, Cloudflare Tunnel exposure for local testing, and authenticated Graph API message requests.</p>
+<p><strong>Technology:</strong> Node.js, JavaScript, Express.js, dotenv, Helmet, Meta WhatsApp Cloud API, Meta Webhooks, Cloudflare Tunnel, and Postman.</p>
+<p><strong>Verification status:</strong> Local server and health route worked; Meta webhook verification and sample inbound event delivery were observed. A complete reply to a real WhatsApp recipient was not yet confirmed. AI-generated replies, RAG, Messenger, website chat, and human handoff remain planned.</p>
+<details class="project-details"><summary>Technical notes &amp; representative code</summary><div class="detail-body"><p><strong>Recorded routes:</strong> <code>GET /health</code>, <code>GET /webhooks/meta</code> for Meta verification, and <code>POST /webhooks/meta</code> for inbound events.</p><pre><code>app.get("/health", (req, res) =&gt; {
+  res.json({
+    success: true,
+    service: "OmniReply AI",
+    status: "running",
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get("/webhooks/meta", (req, res) =&gt; {
+  const mode = req.query["hub.mode"];
+  const token = req.query["hub.verify_token"];
+  const challenge = req.query["hub.challenge"];
+
+  if (mode === "subscribe" &amp;&amp;
+      token === process.env.META_VERIFY_TOKEN) {
+    return res.status(200).send(challenge);
+  }
+  return res.sendStatus(403);
+});</code></pre><p><strong>Outgoing message:</strong> The recorded request uses the Meta Graph API <code>/{PHONE_NUMBER_ID}/messages</code> endpoint with a Bearer access token and a fixed welcome reply. The documented code is a representative reconstruction, not a byte-for-byte export of the current server file.</p><p><strong>Next milestone:</strong> Complete and verify a real WhatsApp message round trip, then harden webhook validation and add AI response generation.</p></div></details>
+</article>
+<article class="project glass reveal"><span class="tag">CASE STUDY 04 · BASE44 · AI CRM · SALES AUTOMATION</span><h3>SalesPilot AI — WhatsApp CRM &amp; Sales Agent</h3>
+<p><strong>Overview:</strong> A WhatsApp-first CRM and sales automation application designed for Nigerian SMEs. It aims to organise business workspaces, customers, leads, product/service catalogues, and customer conversations, with an AI sales assistant grounded in each business's approved information.</p>
+<p><strong>Engineering work:</strong> Base44 application build, multi-business data model, workspace membership roles, customer/lead/product schemas, CRM workflows, WhatsApp inbox direction, and AI sales-agent design with controlled lead capture and human escalation.</p>
+<p><strong>Technology:</strong> Base44 platform and SDK, JavaScript reference patterns, Base44 authentication and entities, AI agent/conversation capabilities, and planned Meta WhatsApp Business Cloud API integration. React/Next.js, TypeScript and PostgreSQL were part of the original architecture exploration, not the verified deployed stack.</p>
+<p><strong>Verification status:</strong> The Base44 app and six schemas (Business, BusinessMembership, Customer, Lead, Product, User) were confirmed in the project record. The Products &amp; Services catalogue and WhatsApp Inbox were previously reported by the builder; the latest AI Sales Agent build attempt returned an error and is not verified complete. Official live WhatsApp Cloud API connection is also unverified.</p>
+<details class="project-details"><summary>Architecture &amp; representative code patterns</summary><div class="detail-body"><p><strong>Data model:</strong> Business workspaces own Customer, Lead and Product records through <code>business_id</code>; BusinessMembership defines OWNER, ADMIN and SALES_REP roles.</p><pre><code>const products = await base44.entities.Product.filter(
+  { business_id: activeBusinessId, status: "active" },
+  "name",
+  100,
+  0
+);
+
+const newLead = await base44.entities.Lead.create({
+  business_id: activeBusinessId,
+  members: [user.id],
+  name: customerName,
+  phone: customerPhone,
+  stage: "new",
+  notes: "Enquired about a product"
+});</code></pre><p><strong>AI sales-agent flow:</strong> Resolve the authenticated business, load only its profile/catalogue/FAQs and conversation history, draft a grounded response, validate claims, and hand off complaints, sensitive cases, explicit human requests, or low-confidence answers.</p><p><strong>Code note:</strong> These are documented SDK/reference patterns, not an export of the deployed Base44 source. Direct source-file inspection was unavailable in the documented build environment.</p><p><strong>Next milestone:</strong> Fix and verify the AI Sales Agent playground, business-knowledge grounding, tenant isolation and escalation behavior before completing official WhatsApp integration.</p></div></details>
+</article>
 </div></div></section></main><footer><span>© <span id="year"></span> Wheezard / Marvellous</span><span>DESIGN · BUILD · AUTOMATE</span></footer><div class="cursor" id="cursor" aria-hidden="true"></div><script>
 const toggle=document.getElementById('menuToggle'),mobileNav=document.getElementById('mobileNav');
 if(toggle&&mobileNav){toggle.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));}
